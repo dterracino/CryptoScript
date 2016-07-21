@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -38,6 +39,68 @@ namespace CryptoScript.Core
                     string value = Console.ReadLine();
                     string varName = line.Replace("$", "").Trim();
                     VariableManager.SetValue(varName, value);
+                }
+                else
+                {
+                    Exceptions.Print(Exceptions.UserInputOnlyToVar);  // wrong usage
+                }
+            }
+            else if (line.StartsWith("write "))
+            {
+                line = line.Replace("write ", "");
+                if (line[0] == '$') // everything ok
+                {
+                    string varNameRaw = line.Replace("$", "");
+                    int index = varNameRaw.IndexOf(" ", StringComparison.Ordinal);
+                    if (index > 0)
+                    {
+                        string varName = varNameRaw.Substring(0, index);
+                        string filepath = varNameRaw.Replace(varName, "").Trim();
+                        if (filepath.EndsWith(" -nl"))
+                        {
+                            filepath = filepath.Replace(" -nl", "");
+                            File.WriteAllText(filepath, VariableManager.GetValue(varName) + Environment.NewLine);
+                        }
+                        else
+                        {
+                            File.WriteAllText(filepath, VariableManager.GetValue(varName));
+                        }
+                    }
+                    else
+                    {
+                        Exceptions.Print(Exceptions.AssignmentNeedsEqual);
+                    }
+                }
+                else
+                {
+                    Exceptions.Print(Exceptions.UserInputOnlyToVar);  // wrong usage
+                }
+            }
+            else if (line.StartsWith("append "))
+            {
+                line = line.Replace("append ", "");
+                if (line[0] == '$') // everything ok
+                {
+                    string varNameRaw = line.Replace("$", "");
+                    int index = varNameRaw.IndexOf(" ", StringComparison.Ordinal);
+                    if (index > 0)
+                    {
+                        string varName = varNameRaw.Substring(0, index);
+                        string filepath = varNameRaw.Replace(varName, "").Trim();
+                        if (filepath.EndsWith(" -nl"))
+                        {
+                            filepath = filepath.Replace(" -nl", "");
+                            File.AppendAllText(filepath, VariableManager.GetValue(varName) + Environment.NewLine);
+                        }
+                        else
+                        {
+                            File.AppendAllText(filepath, VariableManager.GetValue(varName));
+                        }
+                    }
+                    else
+                    {
+                        Exceptions.Print(Exceptions.AssignmentNeedsEqual);
+                    }
                 }
                 else
                 {

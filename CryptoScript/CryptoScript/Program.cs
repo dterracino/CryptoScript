@@ -10,7 +10,8 @@ namespace CryptoScript
     {
         static void Main(string[] args)
         {
-            string scriptPath = args[0]; // get path from arg
+            //string scriptPath = args[0]; // get path from arg
+            string scriptPath = @"C:\Users\Luca\Documents\Visual Studio 2015\Repos\CryptoScript\CryptoScript\CryptoScript\bin\Debug\test.cy";
 
             if (File.Exists(scriptPath)) // file exists
             {
