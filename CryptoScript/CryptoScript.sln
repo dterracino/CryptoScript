@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoScript", "CryptoScript\CryptoScript.csproj", "{B4ED940A-2E1C-4D38-A229-6F0A805E5E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoScript.Core", "CryptoScript.Core\CryptoScript.Core.csproj", "{4C1FC6D6-4DC2-492B-81D7-2BC00B8861B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoScript.Classes", "CryptoScript.Classes\CryptoScript.Classes.csproj", "{5B9F0DE5-36DE-4B67-A651-A4AFD8E1825F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileExtensionRegisterer", "FileExtensionRegisterer\FileExtensionRegisterer.csproj", "{EE91C73A-5991-4063-A0C5-0C8EFA610800}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4ED940A-2E1C-4D38-A229-6F0A805E5E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4ED940A-2E1C-4D38-A229-6F0A805E5E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4ED940A-2E1C-4D38-A229-6F0A805E5E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4ED940A-2E1C-4D38-A229-6F0A805E5E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C1FC6D6-4DC2-492B-81D7-2BC00B8861B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1FC6D6-4DC2-492B-81D7-2BC00B8861B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1FC6D6-4DC2-492B-81D7-2BC00B8861B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1FC6D6-4DC2-492B-81D7-2BC00B8861B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9F0DE5-36DE-4B67-A651-A4AFD8E1825F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9F0DE5-36DE-4B67-A651-A4AFD8E1825F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9F0DE5-36DE-4B67-A651-A4AFD8E1825F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9F0DE5-36DE-4B67-A651-A4AFD8E1825F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE91C73A-5991-4063-A0C5-0C8EFA610800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE91C73A-5991-4063-A0C5-0C8EFA610800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE91C73A-5991-4063-A0C5-0C8EFA610800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE91C73A-5991-4063-A0C5-0C8EFA610800}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
