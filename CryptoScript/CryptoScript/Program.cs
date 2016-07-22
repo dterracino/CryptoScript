@@ -19,7 +19,10 @@ namespace CryptoScript
 
                 foreach (string line in script)
                 {
-                    Script.Analyze(line);
+                    if (line != "")
+                    {
+                        Script.Analyze(line);
+                    }
                 }
             }
             else
