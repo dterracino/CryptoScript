@@ -117,13 +117,30 @@ namespace CryptoScript.Core
                     if (varNameRaw[0] == '$') // value from var
                     {
                         string varNameNew = BetterReplace(varNameRaw, new[] { "$", ")" });
-                        string hash = SHA256.GenSHA256(VariableManager.GetValue(varNameNew));
+                        string hash = SHA.GenSHA256(VariableManager.GetValue(varNameNew));
                         VariableManager.SetValue(varName, hash);
                     }
                     else // value preset
                     {
                         string value = varNameRaw.Replace(")", "").Trim();
-                        string hash = SHA256.GenSHA256(value);
+                        string hash = SHA.GenSHA256(value);
+                        VariableManager.SetValue(varName, hash);
+                    }
+                }
+                else if (BetterReplace(line, new[] {varName, " ", "$$"}).Contains("crc32("))
+                {
+                    string varNameRaw = line.Substring(line.IndexOf("crc32(", StringComparison.Ordinal));
+                    varNameRaw = varNameRaw.Replace("crc32(", "");
+                    if (varNameRaw[0] == '$') // value from var
+                    {
+                        string varNameNew = BetterReplace(varNameRaw, new[] { "$", ")" });
+                        string hash = CRC.GenCRC32(VariableManager.GetValue(varNameNew)).ToString("x2");
+                        VariableManager.SetValue(varName, hash);
+                    }
+                    else // value preset
+                    {
+                        string value = varNameRaw.Replace(")", "").Trim();
+                        string hash = CRC.GenCRC32(value).ToString("x2");
                         VariableManager.SetValue(varName, hash);
                     }
                 }

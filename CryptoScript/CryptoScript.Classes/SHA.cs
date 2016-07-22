@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CryptoScript.Classes
 {
-    public class SHA256
+    public class SHA
     {
         public static string GenSHA256(string data)
         {
