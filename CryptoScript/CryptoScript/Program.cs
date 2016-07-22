@@ -19,7 +19,7 @@ namespace CryptoScript
 
                 foreach (string line in script)
                 {
-                    if (line != "")
+                    if (line != "" && !line.TrimStart().StartsWith("//"))
                     {
                         Script.Analyze(line);
                     }
